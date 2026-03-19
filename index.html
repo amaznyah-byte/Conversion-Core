@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background: black;
     color: gold;
     text-align: center;
@@ -20,11 +20,11 @@ body::before {
     width: 200%;
     height: 200%;
     background:
-        radial-gradient(circle, rgba(255,215,0,0.25) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,0,0,0.1) 1px, transparent 1px);
+        radial-gradient(circle at center, rgba(255,215,0,0.4) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(255,0,0,0.15) 1px, transparent 1px);
     background-size: 60px 60px, 120px 120px;
-    animation: move 20s linear infinite;
-    opacity: 0.25;
+    animation: move 18s linear infinite;
+    opacity: 0.35;
 }
 
 @keyframes move {
@@ -33,7 +33,7 @@ body::before {
     100% { transform: translate(0,0); }
 }
 
-/* NAV BAR */
+/* NAV */
 .nav {
     display: flex;
     justify-content: center;
@@ -46,97 +46,71 @@ body::before {
     border: 1px solid gold;
     font-size: 12px;
     letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.nav div:hover {
-    background: gold;
-    color: black;
 }
 
 /* TITLE */
 h1 {
-    margin-top: 15px;
+    margin-top: 10px;
     letter-spacing: 4px;
-    text-shadow: 0 0 15px gold;
+    text-shadow: 0 0 20px gold;
 }
 
-/* CORE CONVERGENCE */
+/* CORE */
 .core {
-    position: relative;
-    width: 100px;
-    height: 100px;
     margin: 25px auto;
-}
-
-.core::before, .core::after {
-    content: "";
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 120px;
+    height: 120px;
     background: radial-gradient(circle, gold, red);
-    box-shadow: 0 0 25px gold, 0 0 40px red;
+    border-radius: 50%;
+    box-shadow: 0 0 40px gold, 0 0 80px red;
 }
 
-.core::before {
-    left: 0;
+/* MAIN PANEL */
+.panel {
+    width: 80%;
+    margin: 30px auto;
+    background: rgba(20,20,20,0.9);
+    border: 1px solid gold;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
 }
 
-.core::after {
-    right: 0;
-}
-
-/* INPUT BOX */
+/* INPUT */
 textarea {
-    width: 75%;
-    height: 110px;
-    background: #111;
+    width: 100%;
+    height: 100px;
+    background: black;
     color: white;
     border: 1px solid gold;
-    padding: 12px;
-    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+    padding: 10px;
 }
 
 /* BUTTON */
 button {
-    background: linear-gradient(45deg, gold, red);
-    color: black;
-    padding: 12px 30px;
-    border: none;
     margin-top: 15px;
-    font-weight: bold;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, gold, red);
+    border: none;
     box-shadow: 0 0 20px gold;
-    transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 35px red;
-}
-
-/* OUTPUT PANEL */
-.output-box {
-    width: 75%;
-    margin: 25px auto;
-    background: #111;
-    border: 1px solid gold;
-    padding: 15px;
-    text-align: left;
-    box-shadow: 0 0 10px rgba(255,215,0,0.2);
-}
-
-/* METRICS BAR */
-.metrics {
+/* DASHBOARD GRID */
+.dashboard {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
-    font-size: 12px;
+    margin-top: 20px;
 }
 
-.metric {
+.box {
     border: 1px solid gold;
-    padding: 5px 10px;
+    padding: 10px;
+    width: 30%;
+}
+
+/* OUTPUT */
+pre {
+    text-align: left;
+    margin-top: 15px;
 }
 
 </style>
@@ -156,19 +130,22 @@ button:hover {
 
 <div class="core"></div>
 
+<div class="panel">
+
 <textarea id="input" placeholder="Describe your situation..."></textarea>
+
 <br>
 
 <button onclick="runCC()">Run CC</button>
 
-<div class="output-box">
-    <pre id="output"></pre>
+<pre id="output"></pre>
 
-    <div class="metrics">
-        <div class="metric">CONFIDENCE: 82%</div>
-        <div class="metric">RISK: LOW</div>
-        <div class="metric">LEVERAGE: HIGH</div>
-    </div>
+<div class="dashboard">
+    <div class="box">CONFIDENCE: 82%</div>
+    <div class="box">RISK: LOW</div>
+    <div class="box">LEVERAGE: HIGH</div>
+</div>
+
 </div>
 
 <script src="app.js"></script>
