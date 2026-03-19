@@ -2,12 +2,94 @@
 <html>
 <head>
 <title>Conversion Core</title>
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: gold;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background electric web */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, gold 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+    animation: move 20s linear infinite;
+}
+
+@keyframes move {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+
+.container {
+    position: relative;
+    top: 20%;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+textarea {
+    width: 70%;
+    height: 120px;
+    background: #111;
+    color: white;
+    border: 1px solid gold;
+    padding: 10px;
+}
+
+button {
+    background: linear-gradient(45deg, gold, red);
+    color: black;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+pre {
+    margin-top: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #111;
+    padding: 15px;
+    border: 1px solid gold;
+    text-align: left;
+}
+
+</style>
 </head>
-<body style="background:black;color:gold;font-family:Arial;text-align:center;">
-<h1>Conversion Core</h1>
-<textarea id="input" placeholder="Describe your situation..." style="width:80%;height:100px;"></textarea><br><br>
+
+<body>
+
+<div class="container">
+
+<h1>CONVERSION CORE</h1>
+
+<textarea id="input" placeholder="Describe your situation..."></textarea>
+<br>
+
 <button onclick="runCC()">Run CC</button>
+
 <pre id="output"></pre>
+
+</div>
+
 <script src="app.js"></script>
+
 </body>
 </html>
