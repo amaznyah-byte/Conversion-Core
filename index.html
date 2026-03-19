@@ -19,17 +19,18 @@ body::before {
     position: fixed;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, gold 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.15;
-    animation: move 20s linear infinite;
+    background:
+        radial-gradient(circle, rgba(255,215,0,0.3) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(255,0,0,0.05) 1px, transparent 1px);
+    background-size: 50px 50px, 100px 100px;
+    animation: move 15s linear infinite;
+    opacity: 0.25;
 }
-
 @keyframes move {
-    from { transform: translate(0,0); }
-    to { transform: translate(-200px,-200px); }
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-150px,-150px); }
+    100% { transform: translate(0,0); }
 }
-
 .container {
     position: relative;
     top: 20%;
