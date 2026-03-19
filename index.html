@@ -2,12 +2,102 @@
 <html>
 <head>
 <title>Conversion Core</title>
+
+<style>
+body {
+    background: black;
+    color: gold;
+    font-family: Arial;
+    text-align: center;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    background: #111;
+    color: white;
+    border: 1px solid gold;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: gold;
+    color: black;
+    border: none;
+}
+
+pre {
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #111;
+    padding: 10px;
+    text-align: left;
+}
+</style>
+
 </head>
-<body style="background:black;color:gold;font-family:Arial;text-align:center;">
-<h1>Conversion Core</h1>
-<textarea id="input" placeholder="Describe your situation..." style="width:80%;height:100px;"></textarea><br><br>
-<button onclick="runCC()">Run CC</button>
-<pre id="output"></pre>
-<script src="app.js"></script>
+
+<body>
+
+<h1>CONVERSION CORE</h1>
+
+<textarea id="input" placeholder="Describe your situation..."></textarea>
+<br>
+
+<button id="runBtn">Run CC</button>
+
+<pre id="output">System Ready...</pre>
+
+<script>
+
+// WAIT UNTIL PAGE LOADS (IMPORTANT)
+document.addEventListener("DOMContentLoaded", function() {
+
+    const button = document.getElementById("runBtn");
+
+    button.addEventListener("click", function() {
+
+        const input = document.getElementById("input").value;
+
+        if (!input) {
+            alert("Enter a situation first");
+            return;
+        }
+
+        // CC CORE LOGIC (simple but structured)
+        let insight = "Your situation lacks clarity.";
+        let bestMove = "Choose one direction and commit.";
+        let tradeoff = "You gain focus but lose flexibility.";
+        let leverage = "Focus is your highest leverage move.";
+
+        // OUTPUT
+        const result = `
+=== CONVERSION CORE ===
+
+INPUT:
+${input}
+
+INSIGHT:
+${insight}
+
+BEST MOVE:
+${bestMove}
+
+TRADEOFF:
+${tradeoff}
+
+LEVERAGE:
+${leverage}
+        `;
+
+        document.getElementById("output").innerText = result;
+    });
+
+});
+</script>
+
 </body>
 </html>
