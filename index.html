@@ -148,7 +148,40 @@ pre {
 
 </div>
 
-<script src="app.js"></script>
+<script>
+function runCC() {
+
+    const input = document.getElementById("input").value;
+
+    if (!input) {
+        alert("Enter a situation first");
+        return;
+    }
+
+    let insight = "You need clearer direction.";
+    let bestMove = "Focus on one high-impact action.";
+    let tradeoff = "You gain clarity but lose flexibility.";
+    let leverage = "Commit fully to one direction.";
+
+    const output = `
+=== CONVERSION CORE ===
+
+INSIGHT:
+${insight}
+
+BEST MOVE:
+${bestMove}
+
+TRADEOFF:
+${tradeoff}
+
+LEVERAGE:
+${leverage}
+    `;
+
+    document.getElementById("output").innerText = output;
+}
+</script>
 
 </body>
 </html>
