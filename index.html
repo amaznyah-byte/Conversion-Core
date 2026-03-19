@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Conversion Core</title>
+
 <style>
 
 body {
@@ -13,7 +14,7 @@ body {
     overflow: hidden;
 }
 
-/* Background electric web */
+/* ELECTRIC WEB BACKGROUND */
 body::before {
     content: "";
     position: fixed;
@@ -26,22 +27,37 @@ body::before {
     animation: move 15s linear infinite;
     opacity: 0.25;
 }
+
 @keyframes move {
     0% { transform: translate(0,0); }
     50% { transform: translate(-150px,-150px); }
     100% { transform: translate(0,0); }
 }
+
+/* CENTER CONTAINER */
 .container {
     position: relative;
-    top: 20%;
+    top: 18%;
 }
 
+/* TITLE */
 h1 {
     font-size: 32px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px gold;
 }
 
+/* CONVERGENCE SYMBOL (ABSTRACT CC CORE) */
+.core {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: radial-gradient(circle, gold, red);
+    box-shadow: 0 0 25px gold, 0 0 50px red;
+}
+
+/* INPUT */
 textarea {
     width: 70%;
     height: 120px;
@@ -49,8 +65,10 @@ textarea {
     color: white;
     border: 1px solid gold;
     padding: 10px;
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
 }
 
+/* BUTTON */
 button {
     background: linear-gradient(45deg, gold, red);
     color: black;
@@ -59,8 +77,16 @@ button {
     cursor: pointer;
     margin-top: 15px;
     font-weight: bold;
+    box-shadow: 0 0 15px gold;
+    transition: 0.3s;
 }
 
+button:hover {
+    box-shadow: 0 0 30px red;
+    transform: scale(1.05);
+}
+
+/* OUTPUT */
 pre {
     margin-top: 20px;
     width: 70%;
@@ -70,9 +96,11 @@ pre {
     padding: 15px;
     border: 1px solid gold;
     text-align: left;
+    box-shadow: 0 0 10px rgba(255,215,0,0.2);
 }
 
 </style>
+
 </head>
 
 <body>
@@ -80,6 +108,8 @@ pre {
 <div class="container">
 
 <h1>CONVERSION CORE</h1>
+
+<div class="core"></div>
 
 <textarea id="input" placeholder="Describe your situation..."></textarea>
 <br>
